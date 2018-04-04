@@ -7,7 +7,6 @@
         csv: null,
         searchQuery: '',
         results: [],
-        isProgress: false
       };
     },
     methods: {
