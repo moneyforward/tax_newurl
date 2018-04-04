@@ -9,7 +9,7 @@ new Vue({
     };
   },
   methods: {
-    fillCSV() {  
+    fillCSV() {
       this.csv = $.csv.toObjects(document.getElementById("csv").text.trim());
     },
     search() {
