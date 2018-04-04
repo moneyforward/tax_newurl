@@ -2,7 +2,7 @@
   'use strict';
   new Vue({
     el: '#app',
-    data() {
+    data: function() {
       return {
         csv: null,
         searchQuery: '',
@@ -11,10 +11,10 @@
       };
     },
     methods: {
-      fillCSV() {
+      fillCSV: function() {
         this.csv = $.csv.toObjects(document.getElementById("csv").text.trim());
       },
-      search() {
+      search: function () {
         if (this.searchQuery === '') {
           return;
         }
@@ -28,7 +28,7 @@
         }.bind(this), 0);
       }
     },
-    mounted() {
+    mounted: function() {
       this.fillCSV();
     },
   });
