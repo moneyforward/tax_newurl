@@ -22,7 +22,7 @@
         setTimeout(function() {
           this.results = this.csv.filter(function(x) {
             return this.searchQuery.split(/\s/).every(function(q) {
-              return JSON.stringify(x).includes(q);
+              return JSON.stringify(x).indexOf(q) >= 0;
             }.bind(this));
           }.bind(this));
         }.bind(this), 0);
