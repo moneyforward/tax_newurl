@@ -15,19 +15,19 @@
         this.csv = $.csv.toObjects(document.getElementById("csv").text.trim());
       },
       search() {
-        if (this.searchQuery === '') { return '' }
+        if (this.searchQuery === '') { return; }
 
         setTimeout(function() {
           this.results = this.csv.filter(x => {
             return this.searchQuery.split(/\s/).every(q => {
-              return JSON.stringify(x).includes(q)
-            })
+              return JSON.stringify(x).includes(q);
+            });
           });
-        }.bind(this), 0)
+        }.bind(this), 0);
       }
     },
     mounted() {
       this.fillCSV();
     },
-  })
-}($, Vue)
+  });
+}($, Vue);
