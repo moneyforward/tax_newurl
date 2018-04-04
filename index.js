@@ -20,11 +20,11 @@
         }
 
         setTimeout(function() {
-          this.results = this.csv.filter(x => {
-            return this.searchQuery.split(/\s/).every(q => {
+          this.results = this.csv.filter(function(x) {
+            return this.searchQuery.split(/\s/).every(function(q) {
               return JSON.stringify(x).includes(q);
-            });
-          });
+            }.bind(this));
+          }.bind(this));
         }.bind(this), 0);
       }
     },
