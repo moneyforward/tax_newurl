@@ -30,5 +30,10 @@
     mounted: function() {
       this.fillCSV();
     },
+    computed: {
+      isNoData: function() {
+        return this.results.length === 0;
+      }
+    }
   });
 }($, Vue);
