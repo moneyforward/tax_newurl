@@ -17,7 +17,7 @@
     methods: {
       fillCSV: function() {
         var req = new XMLHttpRequest();
-        req.open("get", "data.csv", false);
+        req.open("get", "https://moneyforward.github.io/tax_newurl/data.csv", false);
         req.send(null);
         this.csv = $.csv.toObjects(req.responseText.trim());
       },
