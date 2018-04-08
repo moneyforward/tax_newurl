@@ -15,15 +15,11 @@
       };
     },
     methods: {
-      loadCSV: function() {
+      fillCSV: function() {
         var req = new XMLHttpRequest();
         req.open("get", "data.csv", false);
         req.send(null);
-        document.getElementById("csv").text = req.responseText;
-        this.fillCSV();
-      },
-      fillCSV: function() {
-        this.csv = $.csv.toObjects(document.getElementById("csv").text.trim());
+        this.csv = $.csv.toObjects(req.responseText.trim());
       },
       search: function () {
         if (this.searchQuery === '') {
@@ -40,7 +36,7 @@
       }
     },
     mounted: function() {
-      this.loadCSV();
+      this.fillCSV();
     },
     computed: {
       isNoData: function() {
