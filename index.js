@@ -1,5 +1,10 @@
 !function($, Vue) {
   'use strict';
+  $(function(){
+    $("#button").click(function(){
+      $("#disp").toggle();
+    });
+  });
   new Vue({
     el: '#app',
     data: function() {
