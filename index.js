@@ -1,7 +1,7 @@
 !function($, Vue) {
   'use strict';
   $(function(){
-    $("#button").click(function(){
+    $(".js-show-usage-button").click(function(){
       $("#disp").toggle();
     });
   });
