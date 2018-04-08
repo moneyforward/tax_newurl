@@ -1,5 +1,10 @@
 !function($, Vue) {
   'use strict';
+  $(function(){
+    $(".js-show-usage-button").click(function(){
+      $(".js-usage-notification").toggleClass('is-hidden');
+    });
+  });
   new Vue({
     el: '#app',
     data: function() {
