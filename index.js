@@ -2,7 +2,7 @@
   'use strict';
   $(function(){
     $(".js-show-usage-button").click(function(){
-      $("#disp").toggleClass('is-hidden');
+      $(".js-usage-notification").toggleClass('is-hidden');
     });
   });
   new Vue({
