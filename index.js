@@ -15,6 +15,13 @@
       };
     },
     methods: {
+      loadCSV: function() {
+        var req = new XMLHttpRequest();
+        req.open("get", "data.csv", false);
+        req.send(null);
+        document.getElementById("csv").text = req.responseText;
+        this.fillCSV();
+      },
       fillCSV: function() {
         this.csv = $.csv.toObjects(document.getElementById("csv").text.trim());
       },
@@ -33,7 +40,7 @@
       }
     },
     mounted: function() {
-      this.fillCSV();
+      this.loadCSV();
     },
     computed: {
       isNoData: function() {
