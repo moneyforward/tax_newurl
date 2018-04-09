@@ -5,6 +5,11 @@
       $(".js-usage-notification").toggleClass('is-hidden');
     });
   });
+
+  if (UAParser().browser.name === 'IE') {
+    $('.js-browser-notification').removeClass('is-hidden');
+  }
+
   new Vue({
     el: '#app',
     data: function() {
