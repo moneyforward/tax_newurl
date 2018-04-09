@@ -16,7 +16,10 @@
     },
     methods: {
       fillCSV: function() {
-        this.csv = $.csv.toObjects(document.getElementById("csv").text.trim());
+        var req = new XMLHttpRequest();
+        req.open("get", "https://moneyforward.github.io/tax_newurl/data.csv", false);
+        req.send(null);
+        this.csv = $.csv.toObjects(req.responseText.trim());
       },
       search: function () {
         if (this.searchQuery === '') {
