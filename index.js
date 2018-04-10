@@ -9,6 +9,9 @@
   if (UAParser().browser.name === 'IE') {
     $('.js-browser-notification').removeClass('is-hidden');
   }
+  if (UAParser().device.type !== undefined) {
+    $('.js-device-notification').removeClass('is-hidden');
+  }
 
   new Vue({
     el: '#app',
