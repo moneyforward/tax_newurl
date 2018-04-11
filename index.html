@@ -23,71 +23,71 @@
         </div>
       </header>
       <main class="section">
-      <div class="container">
-        <div class="field has-addons">
-          <div class="control is-expanded">
-            <input v-model="searchQuery" class="input is-medium" placeholder="例：手引 平成 29" @keydown.enter="search">
+        <div class="container">
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input v-model="searchQuery" class="input is-medium" placeholder="例：手引 平成 29" @keydown.enter="search">
+            </div>
+            <div class="control is-expanded">
+              <button class="button is-info is-medium" @click="search">
+                検索
+              </button>
+            </div>
           </div>
-          <div class="control is-expanded">
-            <button class="button is-info is-medium" @click="search">
-              検索
-            </button>
+          <div class="notification js-browser-notification is-hidden">
+            Internet Explorerでのご利用は動作が緩慢になります。<a href="https://www.google.co.jp/chrome/index.html">Google Chrome</a>のご利用を推奨します
           </div>
-        </div>
-        <div class="notification js-browser-notification is-hidden">
-          Internet Explorerでのご利用は動作が緩慢になります。<a href="https://www.google.co.jp/chrome/index.html">Google Chrome</a>のご利用を推奨します
-        </div>
-        <div class="notification js-device-notification is-hidden">
-          タブレットなどでは正常に動作しない可能性があります。PCでのご利用を推奨します。
-        </div>
+          <div class="notification js-device-notification is-hidden">
+            タブレットなどでは正常に動作しない可能性があります。PCでのご利用を推奨します。
+          </div>
 
-      <table class="table is-striped is-fullwidth">
-        <thead>
-          <tr>
-            <th style="width: 50%;">title</th>
-            <th style="width: 50%;">url</th>
-          </tr>
-        </thead>
-        <tfoot v-if="isNoData">
-          <tr>
-            <td class="is-size-4"><strong>該当なし</strong></td>
-          </tr>
-        </tfoot>
-        <tbody>
-          <tr v-for="result in results">
-            <td v-text="result.title"></td>
-            <td style="word-break: break-all;">
-              <a v-text="result.url" :href="result.url" target="_blank"></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-        <button class="button is-primary js-show-usage-button" >使い方を確認する</button>
-        <div class="notification is-hidden js-usage-notification">
-          <div class="container">
-            <p class="has-text-weight-bold">(使い方)</p>
-            <p>・ エンターキーか、検索ボタンから検索を実行できます</p>
-            <p>・ スペース区切りで複数の単語に該当するかを検索できます</p>
-            <p>・ 例： 「手引　平成　29」</p>
-          </div>
-          <div class="container" style="word-break: break-all;">
-            <p class="has-text-weight-bold">(旧サイトのURLをお持ちの方)</p>
-            <p>・手元にある(お気に入り登録されているなど)旧ページ（URL）の一部分（末尾一部分）をコピーして検索ができます</p>
-            <p>　（例）http://www.nta.go.jp/shiraberu/ippanjoho/pamph/sozoku/aramashi/pdf/03.pdf </p>
-            <p>　　　コピーする文字列[ sozoku/aramashi ]</p>
-            <p>　※見つからない場合はコピーする文字列の範囲を短くすることをおすすめします</p>
+          <table class="table is-striped is-fullwidth">
+            <thead>
+              <tr>
+                <th style="width: 50%;">title</th>
+                <th style="width: 50%;">url</th>
+              </tr>
+            </thead>
+            <tfoot v-if="isNoData">
+              <tr>
+                <td class="is-size-4"><strong>該当なし</strong></td>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr v-for="result in results">
+                <td v-text="result.title"></td>
+                <td style="word-break: break-all;">
+                  <a v-text="result.url" :href="result.url" target="_blank"></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="button is-primary js-show-usage-button">使い方を確認する</button>
+          <div class="notification is-hidden js-usage-notification">
+            <div class="container">
+              <p class="has-text-weight-bold">(使い方)</p>
+              <p>・ エンターキーか、検索ボタンから検索を実行できます</p>
+              <p>・ スペース区切りで複数の単語に該当するかを検索できます</p>
+              <p>・ 例： 「手引　平成　29」</p>
+            </div>
+            <div class="container" style="word-break: break-all;">
+              <p class="has-text-weight-bold">(旧サイトのURLをお持ちの方)</p>
+              <p>・手元にある(お気に入り登録されているなど)旧ページ（URL）の一部分（末尾一部分）をコピーして検索ができます</p>
+              <p>　（例）http://www.nta.go.jp/shiraberu/ippanjoho/pamph/sozoku/aramashi/pdf/03.pdf </p>
+              <p>　　　コピーする文字列[ sozoku/aramashi ]</p>
+              <p>　※見つからない場合はコピーする文字列の範囲を短くすることをおすすめします</p>
+            </div>
           </div>
         </div>
-      </div>
       </main>
       <footer class="footer">
-      <div class="container">
-        <p>
-          当サービスの検索結果により生じたいかなる損害に関して、当社は責任を負いかねます。あらかじめご了承ください。<br />
-          <a href="https://github.com/moneyforward/tax_newurl/issues/new">バグの報告などはこちらから</a>
-        </p>
-        <p>また、当サービスは、平成30年4月3日現在の情報によっています。</p>
-      </div>
+        <div class="container">
+          <p>
+            当サービスの検索結果により生じたいかなる損害に関して、当社は責任を負いかねます。あらかじめご了承ください。<br />
+            <a href="https://github.com/moneyforward/tax_newurl/issues/new">バグの報告などはこちらから</a>
+          </p>
+          <p>また、当サービスは、平成30年4月3日現在の情報によっています。</p>
+        </div>
       </footer>
     </div>
     <a href="https://moneyforward.github.io/tax_newurl/">
