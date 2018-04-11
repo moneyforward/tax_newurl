@@ -43,8 +43,8 @@
       <table class="table is-striped is-fullwidth">
         <thead>
           <tr>
-            <th>title</th>
-            <th>url</th>
+            <th style="width: 50%;">title</th>
+            <th style="width: 50%;">url</th>
           </tr>
         </thead>
         <tfoot v-if="isNoData">
@@ -55,7 +55,7 @@
         <tbody>
           <tr v-for="result in results">
             <td v-text="result.title"></td>
-            <td>
+            <td style="word-break: break-all;">
               <a v-text="result.url" :href="result.url" target="_blank"></a>
             </td>
           </tr>
@@ -69,7 +69,7 @@
             <p>・ スペース区切りで複数の単語に該当するかを検索できます</p>
             <p>・ 例： 「手引　平成　29」</p>
           </div>
-          <div class="container">
+          <div class="container" style="word-break: break-all;">
             <p class="has-text-weight-bold">(旧サイトのURLをお持ちの方)</p>
             <p>・手元にある(お気に入り登録されているなど)旧ページ（URL）の一部分（末尾一部分）をコピーして検索ができます</p>
             <p>　（例）http://www.nta.go.jp/shiraberu/ippanjoho/pamph/sozoku/aramashi/pdf/03.pdf </p>
