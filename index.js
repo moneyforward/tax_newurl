@@ -24,10 +24,9 @@
     },
     methods: {
       fillCSV: function() {
-        var req = new XMLHttpRequest();
-        req.open("get", "https://moneyforward.github.io/tax_newurl/data.csv", false);
-        req.send(null);
-        this.csv = $.csv.toObjects(req.responseText.trim());
+        $.get("https://moneyforward.github.io/tax_newurl/data.csv").then(function(data) {
+          this.csv = $.csv.toObjects(data.trim());
+        }.bind(this));
       },
       search: function () {
         if (this.searchQuery === '') {
